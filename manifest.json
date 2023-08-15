@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "string-to-json",
+  "version": "1.0.0",
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "./src/pop-up/index.html",
+    "default_title": "Format JSON on click",
+    "default_icon": {}
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./src/content-script/index.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
