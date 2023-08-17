@@ -1,6 +1,6 @@
 function get(key) {
   return new Promise(resolve => {
-    chrome.storage.local.get([key], result => {
+    chrome.storage.session.get([key], result => {
       resolve(result[key])
     })
   })
@@ -8,12 +8,12 @@ function get(key) {
 
 function set(object) {
   return new Promise(resolve => {
-    chrome.storage.local.set(object, () => resolve)
+    chrome.storage.session.set(object, () => resolve)
   })
 }
 
 export const storage = {
-  local: {
+  session: {
     get,
     set,
   },

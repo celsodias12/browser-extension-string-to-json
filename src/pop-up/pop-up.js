@@ -3,7 +3,7 @@ import { tab, storage } from '../chrome/index.js'
 const checkboxElement = document.getElementById('checkbox')
 
 async function setInitialState() {
-  const value = await storage.local.get('formatJsonInTextOnClick')
+  const value = await storage.session.get('formatJsonInTextOnClick')
 
   const isEnable = value === 'enable'
 
@@ -19,7 +19,7 @@ checkboxElement.addEventListener('click', () => {
     formatJsonInTextOnClick: checkboxStatus,
   }
 
-  storage.local.set(data)
+  storage.session.set(data)
 
   sendMessageToCurrentTab(data)
 })
