@@ -23,17 +23,17 @@
     return parsedJson
   }
 
+  function listener(event) {
+    const text = event.target.textContent
+
+    const hasJsonInText = getJsonInText(text)?.length > 0
+
+    if (!hasJsonInText) return
+
+    event.target.innerText = parseJson(text)
+  }
+
   function parseJsonOnClick() {
-    function listener(event) {
-      const text = event.target.textContent
-
-      const hasJsonInText = getJsonInText(text)?.length > 0
-
-      if (!hasJsonInText) return
-
-      event.target.innerText = parseJson(text)
-    }
-
     const eventArgs = ['click', listener, { capture: true }]
 
     return {
