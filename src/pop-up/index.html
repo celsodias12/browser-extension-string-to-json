@@ -5,14 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Pop-up string to JSON</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>String to JSON extension</title>
   </head>
   <body>
-    <label>
-      Off
-      <input type="checkbox" id="checkbox" />
-      On
-    </label>
+    <div class="checkbox-wrapper">
+      <span>off</span>
+
+      <label>
+        <input type="checkbox" id="checkbox" class="input" />
+
+        <div class="slider">
+          <button class="button"></button>
+        </div>
+      </label>
+
+      <span>on</span>
+    </div>
 
     <script type="module" src="pop-up.js"></script>
   </body>
