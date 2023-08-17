@@ -1,39 +1,37 @@
 ;(() => {
-  chrome.runtime.onMessage.addListener((data, sender, response) => {
-    console.log({ data })
-
+  chrome.runtime.onMessage.addListener(data => {
     if (data?.formatJsonInTextOnClick) {
-      formatJsonInTextOnClick()[data.formatJsonInText]()
+      parseJsonOnClick()[data.formatJsonInTextOnClick]()
     }
   })
 
-  function getJSONsInText(text) {
+  function getJsonInText(text) {
     return text.match(/({.*})/g)
   }
 
-  function formatJsonInText(text) {
-    const JSONs = getJSONsInText(text)
-    console.clear()
-    console.log({ JSONs: JSONs[0] })
-    let formattedText = text
+  function parseJson(text) {
+    const allJson = getJsonInText(text)
 
-    JSONs.forEach(json => {
+    let parsedJson = text
+
+    allJson.forEach(json => {
       const formattedJSON = JSON.stringify(JSON.parse(json), null, 2)
-      formattedText = formattedText.replace(json, formattedJSON)
+
+      parsedJson = parsedJson.replace(json, formattedJSON)
     })
 
-    return formattedText
+    return parsedJson
   }
 
-  function formatJsonInTextOnClick() {
+  function parseJsonOnClick() {
     function listener(event) {
       const text = event.target.textContent
 
-      const hasJsonInText = getJSONsInText(text)?.length > 0
+      const hasJsonInText = getJsonInText(text)?.length > 0
 
       if (!hasJsonInText) return
 
-      event.target.innerText = formatJsonInText(text)
+      event.target.innerText = parseJson(text)
     }
 
     const eventArgs = ['click', listener, { capture: true }]
