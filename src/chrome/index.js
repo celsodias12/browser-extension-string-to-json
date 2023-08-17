@@ -1,2 +1,2 @@
-export * from './storage'
-export * from './tab'
+export * from './storage.js'
+export * from './tab.js'

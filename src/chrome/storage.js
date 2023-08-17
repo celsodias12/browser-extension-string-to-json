@@ -1,7 +1,6 @@
 function get(key) {
   return new Promise(resolve => {
     chrome.storage.local.get([key], result => {
-      // TODO: handle error
       resolve(result[key])
     })
   })
