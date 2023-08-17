@@ -14,5 +14,6 @@
       "js": ["./src/content-script/index.js"],
       "run_at": "document_end"
     }
-  ]
+  ],
+  "permissions": ["tabs", "storage"]
 }
