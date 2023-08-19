@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "string-to-json",
+  "name": "Format JSON on click",
   "version": "1.0.0",
   "host_permissions": ["<all_urls>"],
   "icons": {
