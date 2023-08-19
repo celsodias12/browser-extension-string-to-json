@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Format JSON on click",
   "version": "1.0.0",
+  "name": "Format JSON on click",
+  "description": "Formats JSONs that are in a text",
   "host_permissions": ["<all_urls>"],
   "icons": {
     "16": "./src/assets/icon/16.png",
