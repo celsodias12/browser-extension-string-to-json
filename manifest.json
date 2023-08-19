@@ -3,6 +3,11 @@
   "name": "string-to-json",
   "version": "1.0.0",
   "host_permissions": ["<all_urls>"],
+  "icons": {
+    "16": "./src/assets/icon/16.png",
+    "32": "./src/assets/icon/32.png",
+    "128": "./src/assets/icon/128.png"
+  },
   "action": {
     "default_popup": "./src/pop-up/index.html",
     "default_title": "Format JSON on click",
