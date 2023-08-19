@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "version": "1.0.0",
   "name": "Format JSON on click",
-  "description": "Formats JSONs that are in a text",
+  "description": "Formats JSONs that are in a text area when you click.",
   "host_permissions": ["<all_urls>"],
   "icons": {
     "16": "./src/assets/icon/16.png",

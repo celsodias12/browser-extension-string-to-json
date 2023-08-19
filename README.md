@@ -1,6 +1,6 @@
 # Format JSON on click Extension
 
-This is a browser extension that formats JSONs that are in a text.
+This is a browser extension that formats JSONs that are in a text area when you click.
 
 ## Usage
 
